@@ -11,9 +11,9 @@ import {
   ViabilityStateLayoutSize,
   LendPendingSettlesLayout,
   LendPendingSettlesLayoutSize,
-} from './state';
-import {AssetStateLayout} from './states/asset'
-import {ProtocolStateLayout} from './states/protocol'
+} from './states';
+import {AssetStateLayout} from './states'
+import {ProtocolStateLayout} from './states'
 describe("StateLayouts", () => {
     test("Should check length", () => {
         expect(PoolStateLayout.span).toEqual(PoolStateLayoutSize);

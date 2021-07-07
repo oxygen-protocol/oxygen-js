@@ -9,9 +9,8 @@ import {
 import BN from 'bn.js';
 import { struct, u16, u32, u8 } from 'buffer-layout';
 import { optional_u64, OptionalU64, u64, u128, i8, autovec } from './types';
-import { AssetToken, FeeTableType, FeeTier } from './states/state';
-import { OpenOrders } from '@project-serum/serum';
-import { LtvParams, ltvParams, ltvParamsLayout } from './states';
+import { AssetToken, FeeTableType, FeeTier } from './states';
+import { LtvParams, ltvParamsLayout } from './states';
 
 const TOKEN_PROGRAM_ID = new PublicKey('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA');
 export const OXYGEN_PROGRAM_ID = new PublicKey('J21zqcffYQU2NUJrvAKhqpKZLQK1YaB9dY5kmcxkMQvQ');
@@ -700,10 +699,6 @@ export type LiquidationSendCollateralParams = {
   borrowerFutureWallet: PublicKey;
   borrowerLendBook: PublicKey;
 } & LiquidationHeader;
-
-class LendOpenOrders extends OpenOrders {}
-class BorrowOpenOrders extends OpenOrders {}
-
 
 type SetRiskParamsData = {
   min_asset_size: number;

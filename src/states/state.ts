@@ -9,7 +9,7 @@ import {
   zeros,
   u128,
   reserve
-} from './types';
+} from '../types';
 import { AccountInfo, Connection, PublicKey } from '@solana/web3.js';
 
 
@@ -597,7 +597,7 @@ export type LiquidatorState = {
 
 export function encodeLayout(src: Object, layout: Layout): Buffer {
   const ret = Buffer.alloc(layout.span);
-  if (layout instanceof Layout) layout.encode(src, ret);
+  layout.encode(src, ret);
 
   return ret;
 }

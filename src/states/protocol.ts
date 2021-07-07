@@ -8,10 +8,10 @@ import {
   MAX_TIERS_COUNT,
   PROTOCOL_ASSET_COUNT,
   ParsedAccountInfo,
-} from './../state';
+} from './state';
 import { seq, struct, u16, u8, Layout } from 'buffer-layout';
-import { accountHeaderType, publicKey, u64, zeros, reserve } from './../types';
-import { zeroPubKey } from './../types';
+import { accountHeaderType, publicKey, u64, zeros, reserve } from '../types';
+import { zeroPubKey } from '../types';
 
 export type ProtocolState = {
   account_header: AccountHeader;

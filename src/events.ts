@@ -1,8 +1,8 @@
-import { PublicKey } from '@solana/web3.js';
+import {PublicKey} from '@solana/web3.js';
 import BN from 'bn.js';
-import { struct, union, u32, u8 } from 'buffer-layout';
-import { decodeLayout } from './state';
-import { publicKey, tradeAssetSide, u128, u64 } from './types';
+import {struct, u32, u8, union} from 'buffer-layout';
+import {decodeLayout} from './states';
+import {publicKey, tradeAssetSide, u128, u64} from './types';
 
 export const EventLayoutField = 'event';
 export const EventLayoutPayloadField = 'payload';
@@ -459,6 +459,5 @@ export function encodeEvent(
 }
 
 export function decodeEvent(buff: Buffer): EventMsg {
-  const decoded: EventMsg = decodeLayout(buff, EventLayout);
-  return decoded;
+  return decodeLayout(buff, EventLayout);
 }
